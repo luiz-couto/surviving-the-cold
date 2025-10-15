@@ -9,6 +9,15 @@
 // pallete
 // main color = (100,125,255) - light blue
 
+void renderBackground(GamesEngineeringBase::Window &canvas) {
+    unsigned char backgroundColorPixel[3] = {100, 125, 255};
+    for (int i=0; i<WINDOW_WIDTH; i++) {
+        for (int j=0; j<WINDOW_HEIGHT; j++) {
+            canvas.draw(i, j, backgroundColorPixel);
+        }
+    }
+}
+
 int main() {
     // Create a canvas window with dimensions 1024x768 and title Tiles"
     GamesEngineeringBase::Window canvas;
@@ -21,14 +30,10 @@ int main() {
         // Clear the window for the next frame rendering
         canvas.clear();
         
-        for (int i=0; i<WINDOW_WIDTH; i++) {
-            for (int j=0; j<WINDOW_HEIGHT; j++) {
-                canvas.draw(i, j, 100, 125, 255);
-            }
-        }
-
         // Update game logic
         // Draw();
+        renderBackground(canvas);
+
         // Display the frame on the screen. This must be called once the frame
         //is finished in order to display the frame.
         canvas.present();
