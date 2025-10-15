@@ -1,5 +1,6 @@
 #include <iostream>
 #include "GamesEngineeringBase.h"
+#include "Character.h"
 
 #define WINDOW_WIDTH 1024
 #define WINDOW_HEIGHT 768
@@ -19,10 +20,11 @@ void renderBackground(GamesEngineeringBase::Window &canvas) {
 }
 
 int main() {
-    // Create a canvas window with dimensions 1024x768 and title Tiles"
     GamesEngineeringBase::Window canvas;
     canvas.create(WINDOW_WIDTH, WINDOW_HEIGHT, GAME_NAME);
-    bool running = true; // Variable to control the main loop's running state.
+    bool running = true;
+
+    Character character = Character(&canvas, WINDOW_WIDTH/2, WINDOW_HEIGHT/2);
 
     while (running)
     {
@@ -33,6 +35,7 @@ int main() {
         // Update game logic
         // Draw();
         renderBackground(canvas);
+        character.draw();
 
         // Display the frame on the screen. This must be called once the frame
         //is finished in order to display the frame.
