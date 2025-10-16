@@ -36,6 +36,11 @@ class Character {
         this->position.x = x;
         this->position.y = y;
     }
+
+    void move(int xIncrement, int yIncrement) {
+        this->position.x = this->position.x + xIncrement;
+        this->position.y = this->position.y + yIncrement;
+    }
     
     void draw() {
         for (int i=this->position.x; i < this->position.x + CHARACTER_WIDTH; i++) {

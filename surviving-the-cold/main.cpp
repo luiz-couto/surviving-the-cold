@@ -29,6 +29,19 @@ int main() {
     while (running)
     {
         // Check for input (key presses or window events)
+        if (canvas.keyPressed('W')) {
+            character.move(0, -1);
+        }
+        if (canvas.keyPressed('A')) {
+            character.move(-1, 0);
+        }
+        if (canvas.keyPressed('D')) {
+            character.move(1, 0);
+        }
+        if (canvas.keyPressed('S')) {
+            character.move(0, 1);
+        }
+
         // Clear the window for the next frame rendering
         canvas.clear();
         
